@@ -22,5 +22,5 @@ The Loughran-McDonald Master Dictionary (https://sraf.nd.edu/textual-analysis/re
 Firm relations can be found at ./raw_data/relations/*.
 The Company Relations are collected from S&P Capical IQ (https://www.capitaliq.com/). 
 The first row is the target stock tickers, and following rows are firms that has specific relation with that frim.
-##Contact
+## Contact
 chengrui0108@hotmail.com
