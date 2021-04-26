@@ -84,7 +84,6 @@ def train(model, x_train, x_sentiment_train, y_train, relation_static = None):
     total_loss_count = 0
     batch_train = 15
     for i in train_seq:
-        optimizer.zero_grad()
         output = model(x_train[i - rnn_length + 1: i + 1], x_sentiment_train[i - rnn_length + 1: i + 1],  relation_static = relation_static)
         loss = criterion(output, y_train[i])
         loss.backward()
@@ -93,6 +92,7 @@ def train(model, x_train, x_sentiment_train, y_train, relation_static = None):
         if total_loss_count % batch_train == batch_train - 1:
             torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
             optimizer.step()
+            optimizer.zero_grad()
     if total_loss_count % batch_train != batch_train - 1:
         torch.nn.utils.clip_grad_norm_(model.parameters(), args.clip)
         optimizer.step()
@@ -117,7 +117,7 @@ if __name__=="__main__":
     args = parser.parse_args()
     DEVICE = "cuda:" + args.device
     criterion = torch.nn.NLLLoss()
-    set_seed(2052)
+    set_seed(1017)
     if args.relation != "None":
         static = 1
         pass
