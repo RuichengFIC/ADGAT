@@ -98,8 +98,8 @@ class Graph_GRUModel(nn.Module):
         if hidden is None:
             hidden = torch.zeros(x.size()[1], self.hidden_dim, device=x.device,dtype = x.dtype)
         for seq in range(x.size(0)):
-            hn = self.gru_cell(x[seq], hidden)
-        return hn
+            hidden = self.gru_cell(x[seq], hidden)
+        return hidden
 
 class Graph_Attention(nn.Module):
 
