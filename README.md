@@ -18,7 +18,8 @@ All the preprocessed data can be found at  ./data.
 The selected 198 tickers can be found at ./raw_data/stocks.txt
 
 ##### Transcational Data
-The raw transcational data is about 1.31Gb. Link and preprocess code will be released soon.
+The raw market data can be download from https://drive.google.com/file/d/14B3EubjMzNYGAYDkTEIMeTJ3weXQycw6/view?usp=sharing.
+Please refer to the notebook "rawdata/marketdata_preprocessing.ipynb" for preprocessing. 
 
 ##### Sentiment Indicators
 The news data are not provided in our repository due to copyright issues.
